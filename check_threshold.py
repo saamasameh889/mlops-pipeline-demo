@@ -1,13 +1,9 @@
 import os
-import sys
 import mlflow
-
-
-
 import sys
 
 THRESHOLD = 0.85
-accuracy = 0.90  
+accuracy = 0.70
 
 with open("model_info.txt", "r") as f:
     run_id = f.read().strip()
