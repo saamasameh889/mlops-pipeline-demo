@@ -28,9 +28,6 @@ jobs:
           pip install mlflow dvc scikit-learn
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      - name: Pull dataset with DVC
-        run: dvc pull
-
       - name: Train model
         run: python train.py
 
