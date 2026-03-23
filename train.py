@@ -13,4 +13,4 @@ with open("model_info.txt", "w") as f:
 
 print("Run ID:", run_id)
 print("Accuracy:", accuracy)
-print("model_info exists:", os.path.exists("model_info.txt"))
+print("Created model_info.txt")
