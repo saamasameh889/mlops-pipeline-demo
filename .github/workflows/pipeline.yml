@@ -30,6 +30,8 @@ jobs:
 
       - name: Train model
         run: python train.py
+             ls -la
+             cat model_info.txt
 
       - name: Upload model info artifact
         uses: actions/upload-artifact@v4
@@ -59,10 +61,12 @@ jobs:
           pip install mlflow
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      - name: Download model info artifact
-        uses: actions/download-artifact@v4
+      - name: Upload model info artifact
+        uses: actions/upload-artifact@v4
         with:
           name: model-info
+          path: model_info.txt
+          if-no-files-found: error
 
       - name: Check accuracy threshold
         run: python check_threshold.py
